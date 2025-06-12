@@ -10,3 +10,6 @@ alias grep='grep --color=auto'
 PS1='[\u@\h \W]\$ '
 
 fastfetch
+
+eval $(keychain --eval ~/.ssh/github)
+
