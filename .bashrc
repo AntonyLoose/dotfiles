@@ -19,7 +19,7 @@ rm -rf ~/.ssh/agent
 rm -f ~/.keychain/ant-laptop-*
 
 # Start fresh keychain instance with github key
-keychain --eval --agents ssh github
+eval $(keychain --eval github)
 
 # Android development
 
