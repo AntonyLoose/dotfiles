@@ -11,7 +11,15 @@ PS1='[\u@\h \W]\$ '
 
 fastfetch
 
-eval $(keychain --eval ~/.ssh/github)
+# Kill any leftover ssh-agent processes
+pkill ssh-agent
+
+# Remove stale agent files and keychain cache
+rm -rf ~/.ssh/agent
+rm -f ~/.keychain/ant-laptop-*
+
+# Start fresh keychain instance with github key
+keychain --eval --agents ssh github
 
 # Android development
 
